@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SiteShell } from "@/components/site-shell";
 import "./brand.css";
 
-const siteUrl = process.env.PUBLIC_SITE_URL ?? "https://mcp-atlas-pavitra.vercel.app";
+const siteUrl = process.env.PUBLIC_SITE_URL ?? "https://pyrros.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
