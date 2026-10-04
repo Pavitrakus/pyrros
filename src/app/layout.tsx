@@ -1,43 +1,27 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
-import { Shell } from "@/components/shell";
-import "./globals.css";
-import "./refresh.css";
-import "./polish.css";
+import { SiteShell } from "@/components/site-shell";
+import "./brand.css";
 
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  variable: "--font-plex",
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-});
-
-const base = process.env.ATLAS_PUBLIC_URL ?? "http://127.0.0.1:43123";
+const siteUrl = process.env.PUBLIC_SITE_URL ?? "https://mcp-atlas-pavitra.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(base),
-  title: {
-    default: "Atlas, a field guide to machine abilities",
-    template: "%s · Atlas",
-  },
-  description:
-    "An open field guide to MCP servers: what they let an assistant do, how to install them, and a public ledger for the abilities that do not exist yet.",
+  metadataBase: new URL(siteUrl),
+  title: { default: "Pyrros | Backing the first move", template: "%s | Pyrros" },
+  description: "Pyrros, formerly ByteForge, backs young builders with small grants, serious rooms, and the freedom to make something real. Born in Kanpur.",
   openGraph: {
-    title: "Atlas",
-    description: "A field guide to what machines can now do.",
+    title: "Pyrros | Backing the first move",
+    description: "Small grants. Serious rooms. Young builders. Born in Kanpur.",
     type: "website",
+    images: [{ url: "/pyrros/hero.png", width: 1536, height: 1024, alt: "A bronze hand holds a glowing ember over a workbench" }],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={mono.variable} suppressHydrationWarning>
-      <head><script dangerouslySetInnerHTML={{ __html: 'try{var t=localStorage.getItem("atlas-theme");document.documentElement.dataset.theme=t==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}' }} /></head>
+    <html lang="en">
       <body>
-        <a href="#content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-paper focus:px-3 focus:py-2">
-          Skip to content
-        </a>
-        <Shell>{children}</Shell>
+        <a href="#main" className="skip-link">Skip to content</a>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

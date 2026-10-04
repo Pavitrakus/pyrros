@@ -1,0 +1,12 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "Grants", description: "The first Pyrros grants will put ₹5,000 to ₹20,000 behind projects by high school and college builders." };
+
+export default function GrantsPage() { return <main id="main">
+  <section className="page-hero wrap"><div className="section-index warm">Pyrros / Grants</div><h1>We want to fund<br /><em>your first move.</em></h1><div className="page-hero-bottom"><p>Small grants for high school and college builders. Bring us something you care enough to make real.</p><span className="page-hero-mark">₹5k<br />↓<br />₹20k</span></div></section>
+  <section className="grants-intro"><div className="wrap grants-intro-grid"><div className="section-index">What we are building</div><div><h2>The right amount at the right moment.</h2><p>A first prototype may need parts, materials, travel, compute, or simply room to experiment. We are putting together grants from ₹5,000 to ₹20,000 for young people who can tell us what they want to make and why it matters to them.</p><p>Software, hardware, research, art, community projects. Show us the work or the plan. We care about the person behind it.</p></div></div></section>
+  <section className="wrap grants-details section-pad"><div className="section-index">The shape of it</div><div className="grants-rows"><div><span>01</span><h3>Who</h3><p>High school and college builders with a project they want to start or take further.</p></div><div><span>02</span><h3>How much</h3><p>₹5,000 to ₹20,000, depending on what the work needs.</p></div><div><span>03</span><h3>What matters</h3><p>Your story, your effort, and a clear next step. A polished pitch is optional.</p></div></div></section>
+  <section className="grant-contact wrap"><div><div className="section-index warm">Applications</div><h2>Tell us what you are making.</h2><p>We are preparing the first grant round. Until applications open, send a short note and your work to the ByteForge Instagram account. We will share the application link there first.</p></div><a className="button button-warm" href="https://www.instagram.com/bytteforgespace/" target="_blank" rel="noopener noreferrer">Message us on Instagram <span aria-hidden>↗</span></a></section>
+  <section className="wrap next-page"><span>Want to know where this started?</span><Link href="/story">Read our story <span aria-hidden>↗</span></Link></section>
+  </main> }

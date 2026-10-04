@@ -1,14 +1,5 @@
 "use client";
 
 export default function Error({ reset }: { error: Error; reset: () => void }) {
-  return (
-    <div className="mx-auto max-w-xl px-5 py-16 md:px-8">
-      <p className="kicker">Fault</p>
-      <h1 className="display mt-3 text-5xl">This plate did not open.</h1>
-      <p className="mt-4 text-ink-soft">The page failed while rendering. The catalog itself is still on disk.</p>
-      <button type="button" onClick={reset} className="mt-6 border border-ink px-4 py-3 kicker">
-        Try again
-      </button>
-    </div>
-  );
+  return <main id="main" className="wrap page-hero"><div className="section-index warm">Something went wrong</div><h1>We lost the <em>thread.</em></h1><button className="button button-warm" type="button" onClick={reset}>Try again <span aria-hidden>↗</span></button></main>;
 }
